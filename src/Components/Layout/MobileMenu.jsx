@@ -2,6 +2,7 @@ import {
     useEffect,
     useState,
 } from "react"
+import { Link } from "react-router-dom"
 
 const MobileMenu = ({
 
@@ -22,13 +23,21 @@ const MobileMenu = ({
     }, [])
 
     return <>
-        <section className="absolute bg-gray-700 end-6 top-16">
+        <section className="absolute bg-custom-color3 bg-opacity-10	 end-6 top-16 h-dvh">
             {error && <div>{error}</div>}
-            {menu && menu.map(item => {
-                return <section key={item.id}>
-                    <h1 className="text-2xl">{item.attributes.title}</h1>
-                </section>
-            })}
+
+            <ul className="flex flex-col-reverse items-center gap-4 px-24 py-4">
+                {menu && menu.map(item => {
+                    return <li key={item.id}>
+                        <Link
+                            to={item.attributes.link}
+                            className="font-dmsans-regular text-xl border-b border-custom-color3 hover:text-custom-color3 transition duration-700"
+                        >
+                            {item.attributes.title}
+                        </Link>
+                    </li>
+                })}
+            </ul>
         </section>
     </>
 }
