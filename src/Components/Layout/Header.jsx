@@ -15,7 +15,7 @@ const Header = ({
     }
 
     return <>
-        <section className="flex justify-between items-center max-w-7xl mx-auto my-8 px-6">
+        <section className="flex justify-between items-center max-w-6xl mx-auto my-8 px-6 md:mb-20">
 
             <Logo />
 
