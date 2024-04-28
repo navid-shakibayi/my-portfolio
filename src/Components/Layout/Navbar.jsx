@@ -3,7 +3,7 @@ import {
     useState,
 } from "react"
 
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Navbar = ({
 
@@ -23,6 +23,9 @@ const Navbar = ({
             })
     }, [])
 
+    const activeStyle = "font-dmsans-regular text-xl border-b border-custom-color3 hover:text-custom-color3 transition duration-700 text-custom-color3"
+    const notActiveStyle = "font-dmsans-regular text-xl border-b border-custom-color3 hover:text-custom-color3 transition duration-700"
+
     return <>
         <section>
             {error && <div>{error}</div>}
@@ -31,8 +34,8 @@ const Navbar = ({
                 {menu && menu.map(item => {
                     return <section key={item.id}>
                         <ul>
-                            <li className="font-dmsans-regular text-xl border-b border-custom-color3 hover:text-custom-color3 transition duration-700">
-                                <Link to={item.attributes.link}>{item.attributes.title}</Link>
+                            <li>
+                                <NavLink to={item.attributes.link} className={(navData) => navData.isActive ? `${activeStyle}` : `${notActiveStyle}`}>{item.attributes.title}</NavLink>
                             </li>
                         </ul>
                     </section>
