@@ -70,6 +70,7 @@ const Hero = ({
                         <div>
                             <RichText />
                         </div>
+                        <h1>tesst</h1>
                     </section>
                 </>
             }
