@@ -1,41 +1,24 @@
-import { useEffect, useState } from "react"
-import Loading from "./Loading"
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 const RichText = ({
-
+    content,
 }) => {
 
-    const [content, setContent] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-
-    useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/hero?populate=*')
-            .then(res => res.json())
-            .then(data => {
-                setContent(data.data.attributes.summary)
-                setLoading(false)
-                setError(null)
-            }).catch(err => {
-                setError(err.message)
-                setLoading(false)
-            })
-    }, [])
-
     return <>
-        <section>
+        <section className="mt-8">
             {
-                loading && <>
-                    <Loading />
-                </>
-            }
-
-            {
-                content && content.map(item => {
-                    return <section>
-                        <h1>{item.children.title}</h1>
-                    </section>
-                })
+                content && <section>
+                    <BlocksRenderer
+                        content={content}
+                        blocks={{
+                            // You can use the default components to set class names...
+                            paragraph: ({ children }) => <p className="text-lg lg:text-xl text-justify">{children}</p>,
+                        }}
+                        modifiers={{
+                            bold: ({ children }) => <strong>{children}</strong>,
+                        }}
+                    />
+                </section>
             }
         </section>
     </>
