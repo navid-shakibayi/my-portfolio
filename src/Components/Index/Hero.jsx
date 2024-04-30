@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Loading from "../Shared/Loading"
+import RichText from "../Shared/RichText"
 
 const Hero = ({
 
@@ -64,6 +65,10 @@ const Hero = ({
                                     {hero.attributes.secondaryCtaTitle}
                                 </Link>
                             </div>
+                        </div>
+
+                        <div>
+                            <RichText />
                         </div>
                     </section>
                 </>
