@@ -11,7 +11,6 @@ const RichText = ({
                     <BlocksRenderer
                         content={content}
                         blocks={{
-                            // You can use the default components to set class names...
                             paragraph: ({ children }) => <p className="text-lg lg:text-xl text-justify">{children}</p>,
                         }}
                         modifiers={{
