@@ -2,6 +2,8 @@ import { useState } from "react"
 import AboutMe from "./AboutMe"
 import { useEffect } from "react"
 import Employment from "./Employment"
+import Education from "./Education"
+import MyInfo from "./MyInfo"
 
 const About = ({
 
@@ -29,12 +31,16 @@ const About = ({
             {
                 aboutData && <>
                     <section className="max-w-6xl mx-auto px-6">
-                        <AboutMe 
-                        content={aboutData.attributes.sectionTitle} 
-                        aboutText={aboutData.attributes.aboutMeText}
+                        <AboutMe
+                            content={aboutData.attributes.sectionTitle}
+                            aboutText={aboutData.attributes.aboutMeText}
                         />
 
+                        <MyInfo />
+
                         <Employment employmentsTitle={aboutData.attributes.employmentsTitle} />
+
+                        <Education educationTitle={aboutData.attributes.educationTitle} />
                     </section>
                 </>
             }
