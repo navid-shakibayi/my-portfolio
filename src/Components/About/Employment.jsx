@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import SectionTitle from "../Shared/SectionTitle"
 import ArrowRight from "../Svg/ArrowRight"
+import RichText from "../Shared/RichText"
 
 const Employment = ({
     employmentsTitle,
@@ -9,6 +10,7 @@ const Employment = ({
     const [employmentData, setEmploymentData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     useEffect(() => {
         fetch('https://my-portfolio.chbk.run/api/employments')
@@ -33,10 +35,24 @@ const Employment = ({
                         <div className="flex gap-2">
                             <ArrowRight width={30} height={30} fill={"fill-custom-color31"} />
                             <div>
-                                <h2 className="text-2xl text-custom-color3 font-dmsans-bold">{item.attributes.jobTitle}</h2>
-                                <a href={item.attributes.companyLink}>{item.attributes.companyName}</a>
-                                <p>{item.attributes.startDate}</p>
-                                <p>{item.attributes.presentText}</p>
+                                <h2 className="text-lg text-custom-color3 font-dmsans-bold sm:text-xl lg:text-2xl xl:text-3xl transition-all">{item.attributes.jobTitle}</h2>
+                                <a
+                                    href={item.attributes.companyLink}
+                                    className="font-dmsans-bold text-sm md:text-base lg:text-lg"
+                                >
+                                    {item.attributes.companyName}
+                                </a>
+                                <div className="flex divide-x-2 divide-custom-color3 text-sm">
+                                    <p className="pe-2">{monthNames[new Date(item.attributes.startDate).getMonth()]} {new Date(item.attributes.startDate).getFullYear()}</p>
+                                    <p className="ps-2">{item.attributes.present ? (
+                                        item.attributes.presentText
+                                    ) : (
+                                        <>
+                                            {monthNames[new Date(item.attributes.endDate).getMonth()]} {new Date(item.attributes.endDate).getFullYear()}
+                                        </>
+                                    )}</p>
+                                </div>
+                                <RichText content={item.attributes.summary} />
                             </div>
                         </div>
                     </div>
