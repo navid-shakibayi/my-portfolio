@@ -6,6 +6,8 @@ import {
 import Header from "./Components/Layout/Header";
 import Hero from "./Components/Index/Hero";
 import About from "./Components/About/About";
+import SkillPage from "./Components/SkillPage/SkillPage";
+import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
 
 function App() {
   return <>
@@ -15,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<SkillPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </BrowserRouter>
     </section>
