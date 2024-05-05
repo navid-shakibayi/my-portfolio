@@ -50,8 +50,11 @@ const ProjectsPage = ({
             </>}
 
             {projectData && projectData.map(item => {
-                return <section>
-                    <h1>{item.attributes.projectName}</h1>
+                return <section key={item.id}>
+                    <Project
+                        projectName={item.attributes.projectName}
+                        src={item.attributes.image.data.attributes.url}
+                    />
                 </section>
             })}
         </section>
