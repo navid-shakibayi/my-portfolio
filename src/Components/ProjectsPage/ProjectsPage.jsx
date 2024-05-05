@@ -54,6 +54,10 @@ const ProjectsPage = ({
                     <Project
                         projectName={item.attributes.projectName}
                         src={item.attributes.image.data.attributes.url}
+                        link={item.attributes.link}
+                        framework={item.attributes.framework}
+                        logoSrc={item.attributes.icon.data.attributes.url}
+                        projectData={projectData}
                     />
                 </section>
             })}
