@@ -26,21 +26,6 @@ const ProjectsPage = ({
             })
     }, [])
 
-    const [projectData, setProjectData] = useState(null)
-
-    useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/projects?populate=*')
-            .then(res => res.json())
-            .then(data => {
-                setProjectData(data.data)
-                setLoading(false)
-                setError(null)
-            }).catch(err => {
-                setLoading(false)
-                setError(err.message)
-            })
-    }, [])
-
     return <>
         <section className="max-w-6xl mx-auto px-6">
             {loading && <><Loading /></>}
@@ -49,18 +34,7 @@ const ProjectsPage = ({
                 <SectionTitle content={projectsPageData.attributes.sectionTitle} />
             </>}
 
-            {projectData && projectData.map(item => {
-                return <section key={item.id}>
-                    <Project
-                        projectName={item.attributes.projectName}
-                        src={item.attributes.image.data.attributes.url}
-                        link={item.attributes.link}
-                        framework={item.attributes.framework}
-                        logoSrc={item.attributes.icon.data.attributes.url}
-                        projectData={projectData}
-                    />
-                </section>
-            })}
+            <Project />
         </section>
     </>
 }
