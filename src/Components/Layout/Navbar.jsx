@@ -30,7 +30,7 @@ const Navbar = ({
         <section>
             {error && <div>{error}</div>}
 
-            <div className="flex gap-8">
+            <div className="flex flex-row-reverse gap-8">
                 {menu && menu.map(item => {
                     return <section key={item.id}>
                         <ul>
