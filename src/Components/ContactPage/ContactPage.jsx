@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import SectionTitle from '../Shared/SectionTitle'
 import Loading from "../Shared/Loading"
 import Form from "./Form"
+import Information from "./Information"
 
 const ContactPage = ({
 
@@ -36,7 +37,19 @@ const ContactPage = ({
                 contactData && <>
                     <SectionTitle content={contactData.attributes.sectionTitle} />
                     <p className="text-center mt-4 font-dmsans-bold text-sm md:text-base lg:text-lg">{contactData.attributes.summary}</p>
-                    <Form />
+                    <div className="lg:grid grid-cols-2 gap-6">
+                        <Information
+                            githubTitle={contactData.attributes.githubTitle}
+                            github={contactData.attributes.github}
+                            emailTitle={contactData.attributes.emailTitle}
+                            email={contactData.attributes.email}
+                            phoneTitle={contactData.attributes.phoneTitle}
+                            phone={contactData.attributes.phone}
+                            websiteTitle={contactData.attributes.websiteTitle}
+                            website={contactData.attributes.website}
+                        />
+                        <Form />
+                    </div>
                 </>
             }
         </section>
