@@ -49,7 +49,12 @@ const ContactPage = ({
                             website={contactData.attributes.website}
                             githubLink={contactData.attributes.githubLink}
                         />
-                        <Form />
+                        <Form
+                            formName={contactData.attributes.formName}
+                            formEmail={contactData.attributes.formEmail}
+                            formBody={contactData.attributes.formBody}
+                            ctaText={contactData.attributes.ctaText}
+                        />
                     </div>
                 </>
             }
