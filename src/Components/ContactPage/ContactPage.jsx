@@ -52,6 +52,7 @@ const ContactPage = ({
                         <Form
                             formName={contactData.attributes.formName}
                             formEmail={contactData.attributes.formEmail}
+                            formPhone={contactData.attributes.formPhone}
                             formBody={contactData.attributes.formBody}
                             ctaText={contactData.attributes.ctaText}
                         />

@@ -6,7 +6,16 @@ const Form = ({
     formEmail,
     formBody,
     ctaText,
+    formPhone,
 }) => {
+
+    const [name, setName] = useState(null)
+    const [email, setEmail] = useState(null)
+    const [message, setMessage] = useState(null)
+
+    useEffect(() => {
+        fetch('')
+    }, [])
 
     const labelStyle = "text-sm font-dmsans-bold underline decoration-custom-color3 underline-offset-4 md:text-base lg:text-lg"
     const inputStyle = "mt-3  text-base font-dmsans-bold px-2 py-0.5 rounded-sm focus:outline-none border border-custom-color31 border-2 focus:border-custom-color3 bg-custom-color13 md:text-lg"
@@ -20,6 +29,9 @@ const Form = ({
 
                 <label htmlFor="email" className={`mt-6 ${labelStyle}`}>{formEmail}</label>
                 <input type="email" name="email" id="email" className={inputStyle} />
+
+                <label htmlFor="phone" className={`mt-6 ${labelStyle}`}>{formPhone}</label>
+                <input type="text" name="phone" id="phone" className={inputStyle} />
 
                 <label htmlFor="message" className={`mt-6 ${labelStyle}`}>{formBody}</label>
                 <textarea name="message" id="message" className={`h-64 ${inputStyle}`}></textarea>
