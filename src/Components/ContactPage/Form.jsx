@@ -14,12 +14,14 @@ const Form = ({
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
 
-    useEffect(() => {
-
-    }, [])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const submitHandler = (e) => {
+
         e.preventDefault()
+
+        setLoading(true)
         fetch('https://my-portfolio.chbk.run/api/contact-requests', {
             method: 'POST',
             body: JSON.stringify({
@@ -37,6 +39,10 @@ const Form = ({
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                setLoading(false)
+                setError(null)
+            }).catch(err => {
+                setError(err.message)
             })
         console.log(name)
     }
@@ -115,6 +121,7 @@ const Form = ({
                 onClick={submitHandler}
                 disabled={name === '' || email === '' || phone === '' || message === ''}
             >
+                {loading&& <Loading />}
                 {ctaText}
             </button>
         </div>
