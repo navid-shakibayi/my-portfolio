@@ -7,6 +7,7 @@ const Information = ({
     phone,
     websiteTitle,
     website,
+    githubLink,
 }) => {
 
     const cardStyle = "bg-custom-color13 text-center px-2 py-8 flex flex-col items-center justify-center"
@@ -15,25 +16,25 @@ const Information = ({
 
     return <>
         <section className="mt-8 flex flex-col sm:grid grid-cols-2 gap-4">
-            <div className={cardStyle}>
+            <a href={`mailto:${email}`} className={cardStyle}>
                 <p className={titleStyle}>{emailTitle}</p>
                 <p className={subtitleStyle}>{email}</p>
-            </div>
+            </a>
 
-            <div className={cardStyle}>
+            <a href={`tel:${phone}`} className={cardStyle}>
                 <p className={titleStyle}>{phoneTitle}</p>
                 <p className={subtitleStyle}>{phone}</p>
-            </div>
+            </a>
 
-            <div className={cardStyle}>
+            <a href={githubLink} className={cardStyle}>
                 <p className={titleStyle}>{githubTitle}</p>
                 <p className={subtitleStyle}>{github}</p>
-            </div>
+            </a>
 
-            <div className={cardStyle}>
+            <a href={`http://${website}`} className={cardStyle}>
                 <p className={titleStyle}>{websiteTitle}</p>
                 <p className={subtitleStyle}>{website}</p>
-            </div>
+            </a>
         </section>
     </>
 }

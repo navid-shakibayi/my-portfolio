@@ -47,6 +47,7 @@ const ContactPage = ({
                             phone={contactData.attributes.phone}
                             websiteTitle={contactData.attributes.websiteTitle}
                             website={contactData.attributes.website}
+                            githubLink={contactData.attributes.githubLink}
                         />
                         <Form />
                     </div>
