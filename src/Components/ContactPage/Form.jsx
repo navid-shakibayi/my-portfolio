@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Loading from "../Shared/Loading"
+import Swal from "sweetalert2"
 
 const Form = ({
     formName,
@@ -41,6 +42,12 @@ const Form = ({
                 console.log(data)
                 setLoading(false)
                 setError(null)
+                Swal.fire({
+                    icon: "success",
+                    title: "Thanks!",
+                    text: "Your message has been sent.",
+                    confirmButtonText: "Ok"
+                });
             }).catch(err => {
                 setError(err.message)
             })
@@ -117,11 +124,11 @@ const Form = ({
             </form>
             <button
                 type="submit"
-                className="disabled:bg-custom-color31 text-sm w-full mt-6 font-dmsans-bold py-1 bg-custom-color3 transition-all duration-500 rounded-sm md:text-base lg:text-lg"
+                className="bg-custom-color31 text-sm w-full mt-6 font-dmsans-bold py-1 hover:bg-custom-color3 transition-all duration-500 rounded-sm md:text-base lg:text-lg"
                 onClick={submitHandler}
                 disabled={name === '' || email === '' || phone === '' || message === ''}
             >
-                {loading&& <Loading />}
+                {loading && <Loading />}
                 {ctaText}
             </button>
         </div>
