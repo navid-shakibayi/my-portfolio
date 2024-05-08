@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import SectionTitle from '../Shared/SectionTitle'
 import Loading from "../Shared/Loading"
-import Form from "./Form"
 
-const ContactPage = ({
+const Form = ({
 
 }) => {
 
@@ -25,7 +23,7 @@ const ContactPage = ({
     }, [])
 
     return <>
-        <section className="max-w-6xl mx-auto px-6">
+        <section>
             {
                 loading && <>
                     <Loading />
@@ -34,13 +32,13 @@ const ContactPage = ({
 
             {
                 contactData && <>
-                    <SectionTitle content={contactData.attributes.sectionTitle} />
-                    <p className="text-center mt-4 font-dmsans-bold text-sm md:text-base lg:text-lg">{contactData.attributes.summary}</p>
-                    <Form />
+                    <form action="">
+                        <label htmlFor="name">{contactData.attributes.formTitle}</label>
+                    </form>
                 </>
             }
         </section>
     </>
 }
 
-export default ContactPage
+export default Form
