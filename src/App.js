@@ -10,6 +10,7 @@ import SkillPage from "./Components/SkillPage/SkillPage";
 import ProjectsPage from "./Components/ProjectsPage/ProjectsPage";
 import ContactPage from "./Components/ContactPage/ContactPage";
 import Requests from "./Components/ContactRequest/Requests";
+import Footer from "./Components/Layout/Footer";
 
 function App() {
   return <>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/requests" element={<Requests />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </section>
   </>
