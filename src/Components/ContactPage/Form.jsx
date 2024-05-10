@@ -39,7 +39,6 @@ const Form = ({
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setLoading(false)
                 setError(null)
                 Swal.fire({
@@ -51,7 +50,6 @@ const Form = ({
             }).catch(err => {
                 setError(err.message)
             })
-        console.log(name)
     }
 
     const labelStyle = "text-sm font-dmsans-bold underline decoration-custom-color3 underline-offset-4 md:text-base lg:text-lg"
@@ -60,7 +58,11 @@ const Form = ({
     return <>
 
         <div>
-            <form action="" onSubmit={(e) => submitHandler(e)} className="flex flex-col mt-8">
+            <form
+                onSubmit={(e) => submitHandler(e)}
+                autoComplete="on"
+                className="flex flex-col mt-8"
+            >
                 <label
                     htmlFor="name"
                     className={labelStyle}

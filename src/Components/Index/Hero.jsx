@@ -40,7 +40,7 @@ const Hero = ({
                         <div className="flex flex-col items-center md:flex-row-reverse md:justify-between md:items-center transition-all">
                             <div className="flex justify-center md:contents">
                                 <img
-                                    src="https://my-portfolio.chbk.run/uploads/hero_image_8f53b9c819.jpg"
+                                    src={`https://my-portfolio.chbk.run${hero.attributes.image.data.attributes.url}`}
                                     alt={hero.attributes.title}
                                     className="rounded-full aspect-square object-cover max-w-[60%] ring-8 ring-custom-color11 md:max-w-[45%] transition-all"
                                 />

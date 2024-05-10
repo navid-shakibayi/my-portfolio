@@ -26,13 +26,13 @@ const Header = ({
 
                 <div
                 onClick={clickHandler}
-                className="lg:hidden"
+                className="lg:hidden cursor-pointer"
                 >
                     <HamburgerMenu />
                 </div>
 
                 <div className={open ? "block" : "hidden"}>
-                    <MobileMenu />
+                    <MobileMenu clickHandler={clickHandler} />
                 </div>
             </div>
         </section>

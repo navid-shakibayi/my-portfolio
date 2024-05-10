@@ -5,7 +5,7 @@ import {
 import { Link } from "react-router-dom"
 
 const MobileMenu = ({
-
+    clickHandler,
 }) => {
 
     const [menu, setMenu] = useState(null)
@@ -23,11 +23,11 @@ const MobileMenu = ({
     }, [])
 
     return <>
-        <section className="absolute bg-custom-color3 bg-opacity-10	 end-6 top-16 h-dvh">
+        <section className="absolute bg-custom-color1 end-0 top-16 h-dvh z-20">
             {error && <div>{error}</div>}
 
-            <ul className="flex flex-col-reverse items-center gap-4 px-24 py-4">
-                {menu && menu.map(item => {
+            <ul className="flex flex-col-reverse items-end gap-4 px-16 py-4">
+                {menu && menu?.toReversed().map(item => {
                     return <li key={item.id}>
                         <Link
                             to={item.attributes.link}
@@ -39,6 +39,7 @@ const MobileMenu = ({
                 })}
             </ul>
         </section>
+        <div onClick={clickHandler} className="bg-custom-color31 w-full h-dvh absolute left-0 z-10 bg-opacity-40"></div>
     </>
 }
 
