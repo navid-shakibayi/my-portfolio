@@ -12,7 +12,6 @@ const MyInfo = ({
         fetch('https://my-portfolio.chbk.run/api/my-infos?populate=*')
             .then(res => res.json())
             .then(data => {
-                console.log(data.data[0].attributes.svg.data.attributes.url)
                 setMyInfoData(data.data)
                 setLoading(false)
                 setError(null)
