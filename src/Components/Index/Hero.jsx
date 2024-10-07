@@ -13,7 +13,7 @@ const Hero = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/hero?populate=*')
+        fetch('https://api.codenavid.ir/api/hero?populate=*')
             .then(res => res.json())
             .then(data => {
                 setHero(data.data);
@@ -25,7 +25,7 @@ const Hero = ({
             })
     }, [])
 
-    const uploadurl = "https://my-portfolio.chabk.ir"
+    const uploadurl = "https://api.codenavid.ir"
 
     return <>
         <section className="max-w-6xl mx-auto px-6">
@@ -40,7 +40,7 @@ const Hero = ({
                         <div className="flex flex-col items-center md:flex-row-reverse md:justify-between md:items-center transition-all">
                             <div className="flex justify-center md:contents">
                                 <img
-                                    src={`https://my-portfolio.chabk.ir${hero.attributes.image.data.attributes.url}`}
+                                    src={`https://api.codenavid.ir${hero.attributes.image.data.attributes.url}`}
                                     alt={hero.attributes.title}
                                     className="rounded-full aspect-square object-cover max-w-[60%] ring-8 ring-custom-color11 md:max-w-[45%] transition-all"
                                 />
@@ -55,7 +55,7 @@ const Hero = ({
 
                                 <div className="flex gap-3 mt-4">
                                     <a
-                                        href="https://my-portfolio.chabk.ir/uploads/Jobinja_QW_8467715_b74f15f17d.pdf"
+                                        href="https://api.codenavid.ir/uploads/Jobinja_QW_8467715_b74f15f17d.pdf"
                                         className="bg-custom-color3 px-4 py-1 text-xs font-dmsans-medium sm:text-base lg:text-lg transition-all"
                                     >
                                         {hero.attributes.primeryCtaTitle}

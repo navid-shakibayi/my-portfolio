@@ -12,7 +12,7 @@ const MobileMenu = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/headers')
+        fetch('https://api.codenavid.ir/api/headers')
             .then(res => res.json())
             .then(data => {
                 setMenu(data.data);

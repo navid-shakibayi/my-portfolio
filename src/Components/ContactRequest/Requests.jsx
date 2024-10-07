@@ -10,7 +10,7 @@ const Requests = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/contact-requests')
+        fetch('https://api.codenavid.ir/api/contact-requests')
             .then(res => res.json())
             .then(data => {
                 setRequestsData(data.data)

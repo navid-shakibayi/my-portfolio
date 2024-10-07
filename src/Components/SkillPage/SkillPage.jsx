@@ -13,7 +13,7 @@ const SkillPage = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/skill-page')
+        fetch('https://api.codenavid.ir/api/skill-page')
             .then(res => res.json())
             .then(data => {
                 setSkillPageData(data.data)

@@ -14,7 +14,7 @@ const About = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/about')
+        fetch('https://api.codenavid.ir/api/about')
             .then(res => res.json())
             .then(data => {
                 setAboutData(data.data)

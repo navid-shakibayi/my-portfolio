@@ -23,7 +23,7 @@ const Form = ({
         e.preventDefault()
 
         setLoading(true)
-        fetch('https://my-portfolio.chabk.ir/api/contact-requests', {
+        fetch('https://api.codenavid.ir/api/contact-requests', {
             method: 'POST',
             body: JSON.stringify({
                 "data": {

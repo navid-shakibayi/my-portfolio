@@ -9,7 +9,7 @@ const Skills = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chabk.ir/api/skills?populate=*')
+        fetch('https://api.codenavid.ir/api/skills?populate=*')
             .then(res => res.json())
             .then(data => {
                 setSkillsData(data.data)
@@ -30,7 +30,7 @@ const Skills = ({
                         className="flex flex-col gap-4 items-center justify-center mt-8 bg-custom-color13 p-4 w-fit aspect-square"
                     >
                         <img
-                            src={`https://my-portfolio.chabk.ir${item.attributes.image.data.attributes.url}`}
+                            src={`https://api.codenavid.ir${item.attributes.image.data.attributes.url}`}
                             alt={item.attributes.title}
                             className="w-20"
                         />
