@@ -11,7 +11,7 @@ const Logo = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/branding')
+        fetch('https://my-portfolio.chabk.ir/api/branding')
             .then(res => res.json())
             .then(data => {
                 setLogo(data)

@@ -11,7 +11,7 @@ const Education = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/educations')
+        fetch('https://my-portfolio.chabk.ir/api/educations')
             .then(res => res.json())
             .then(data => {
                 setEducationData(data.data)

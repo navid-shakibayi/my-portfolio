@@ -9,7 +9,7 @@ const MyInfo = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/my-infos?populate=*')
+        fetch('https://my-portfolio.chabk.ir/api/my-infos?populate=*')
             .then(res => res.json())
             .then(data => {
                 setMyInfoData(data.data)
@@ -30,7 +30,7 @@ const MyInfo = ({
                         className="bg-custom-color13 p-2 flex flex-col justify-center items-center md:w-48 lg:w-56 xl:w-60 md:aspect-square group transition-all duration-700"
                     >
                         <img
-                            src={`https://my-portfolio.chbk.run${item.attributes.svg.data.attributes.url}`}
+                            src={`https://my-portfolio.chabk.ir${item.attributes.svg.data.attributes.url}`}
                             alt={item.attributes.title}
                             className="w-10 group-hover:w-12 transition-all duration-700"
                         />

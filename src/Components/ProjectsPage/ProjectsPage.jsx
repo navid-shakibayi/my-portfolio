@@ -14,7 +14,7 @@ const ProjectsPage = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/projects-page')
+        fetch('https://my-portfolio.chabk.ir/api/projects-page')
             .then(res => res.json())
             .then(data => {
                 setProjectsPageData(data.data)

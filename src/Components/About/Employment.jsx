@@ -13,7 +13,7 @@ const Employment = ({
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/employments')
+        fetch('https://my-portfolio.chabk.ir/api/employments')
             .then(res => res.json())
             .then(data => {
                 setEmploymentData(data.data)

@@ -13,7 +13,7 @@ const ContactPage = ({
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        fetch('https://my-portfolio.chbk.run/api/contact-page')
+        fetch('https://my-portfolio.chabk.ir/api/contact-page')
             .then(res => res.json())
             .then(data => {
                 setContactData(data.data)
