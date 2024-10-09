@@ -31,6 +31,7 @@ const MobileMenu = ({
                     return <li key={item.id}>
                         <Link
                             to={item.attributes.link}
+                            onClick={clickHandler}
                             className="font-dmsans-regular text-xl border-b border-custom-color3 hover:text-custom-color3 transition duration-700"
                         >
                             {item.attributes.title}

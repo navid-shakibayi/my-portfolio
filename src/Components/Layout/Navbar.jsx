@@ -6,7 +6,7 @@ import {
 import { Link, NavLink } from "react-router-dom"
 
 const Navbar = ({
-
+    
 }) => {
 
     const [menu, setMenu] = useState(null)
